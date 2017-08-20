@@ -1,0 +1,32 @@
+{
+    "name": "mokamoto12/project-euler",
+    "description": "Project Euler solution in PHP.",
+    "type": "project",
+    "require": {
+        "psr/http-message": "^1.0",
+        "http-interop/http-factory-slim": "^0.3.0",
+        "lavoiesl/php-benchmark": "^1.4",
+        "symfony/console": "^3.3",
+        "symfony/validator": "^3.3",
+        "symfony/filesystem": "^3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3",
+        "mikey179/vfsStream": "^1.6",
+        "mockery/mockery": "^0.9.9"
+    },
+    "authors": [
+        {
+            "name": "mokamoto12",
+            "email": "mokamoto1208@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mokamoto12\\ProjectEuler\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
