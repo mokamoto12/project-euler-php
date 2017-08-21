@@ -8,7 +8,7 @@ use Mokamoto12\ProjectEuler\Problem\Specification\Composite\CompositeSpecificati
  * Class DivisibleSpecification
  * @package Mokamoto12\ProjectEuler\Problem\Specification
  */
-class DivisibleSpecification extends CompositeSpecification
+class MultipleSpecification extends CompositeSpecification
 {
     /**
      * @var int
