@@ -10,5 +10,7 @@ use PHPUnit\Framework\TestCase;
  */
 class TextTest extends TestCase
 {
-
+    public function testToString()
+    {
+    }
 }
