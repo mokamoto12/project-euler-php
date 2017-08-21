@@ -9,9 +9,8 @@ use Mokamoto12\ProjectEuler\Problem\Specification\Specification;
  * Class Problem001
  * @package Mokamoto12\ProjectEuler\Problem
  */
-class Problem001 implements Problem
+class SumProblem implements Problem
 {
-    use SumProblemResolveTrait;
     /**
      * @var Sequence
      */
@@ -32,5 +31,13 @@ class Problem001 implements Problem
     {
         $this->sequence = $sequence;
         $this->specification = $specification;
+    }
+
+    /**
+     * @return int
+     */
+    public function resolve()
+    {
+        return (int)array_sum($this->sequence->filteredBy($this->specification));
     }
 }
