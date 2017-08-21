@@ -2,8 +2,9 @@
 
 namespace Mokamoto12\ProjectEuler\Problem;
 
+use Mokamoto12\ProjectEuler\Problem\Sequence\NaturalSequence;
 use Mokamoto12\ProjectEuler\Problem\Sequence\Sequence;
-use Mokamoto12\ProjectEuler\Problem\Specification\Composite\CompositeSpecification;
+use Mokamoto12\ProjectEuler\Problem\Specification\MultipleSpecification;
 use Mokamoto12\ProjectEuler\Problem\Specification\Specification;
 use PHPUnit\Framework\TestCase;
 
@@ -30,27 +31,13 @@ class SumProblemTest extends TestCase
 
     public function setUp()
     {
-        $this->specification = \Mockery::mock(CompositeSpecification::class);
-        $this->specification->shouldReceive('isSatisfiedBy')->once()->andReturn(true);
-
-        $this->sequence = \Mockery::mock(Sequence::class);
+        $this->specification = new MultipleSpecification(3);
+        $this->sequence = new NaturalSequence(10);
+        $this->sumProblem = new SumProblem($this->sequence, $this->specification);
     }
 
     public function testResolve()
     {
-        $this->sequence->shouldReceive('filteredBy')->once()->andReturn([3, 5, 6, 9]);
-
-        $this->sumProblem = new SumProblem($this->sequence, $this->specification);
-
-        $this->assertEquals(23, $this->sumProblem->resolve());
-    }
-
-    public function testResolveEmptySequence()
-    {
-        $this->sequence->shouldReceive('filteredBy')->once()->andReturn([]);
-
-        $this->sumProblem = new SumProblem($this->sequence, $this->specification);
-
-        $this->assertEquals(0, $this->sumProblem->resolve());
+        $this->assertEquals(18, $this->sumProblem->resolve());
     }
 }

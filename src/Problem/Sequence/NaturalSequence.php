@@ -8,7 +8,7 @@ use Mokamoto12\ProjectEuler\Problem\Specification\Specification;
  * Class RangeSequence
  * @package Mokamoto12\ProjectEuler\Problem\Sequence
  */
-class RangeSequence implements Sequence
+class NaturalSequence implements Sequence
 {
     /**
      * @var int[]
