@@ -11,9 +11,9 @@ use Mokamoto12\ProjectEuler\Problem\Specification\Specification;
 class FibonacciSequence implements Sequence
 {
     /**
-     * @var \Generator
+     * @var int
      */
-    private $fibonacci;
+    private $max;
 
     /**
      * FibonacciSequence constructor.
@@ -22,7 +22,7 @@ class FibonacciSequence implements Sequence
      */
     public function __construct(int $max)
     {
-        $this->fibonacci = $this->generator($max);
+        $this->max = $max;
     }
 
     /**
@@ -33,7 +33,7 @@ class FibonacciSequence implements Sequence
     public function filteredBy(Specification $specification): array
     {
         $ret = [];
-        foreach ($this->fibonacci as $num) {
+        foreach ($this->generator() as $num) {
             if ($specification->isSatisfiedBy($num)) {
                 $ret[] = $num;
             }
@@ -42,11 +42,9 @@ class FibonacciSequence implements Sequence
     }
 
     /**
-     * @param int $max
-     *
      * @return \Generator
      */
-    private function generator(int $max): \Generator
+    private function generator(): \Generator
     {
         $current = 1;
         $carry = 2;
@@ -55,7 +53,7 @@ class FibonacciSequence implements Sequence
 
             list($current, $carry) = [$carry, $current + $carry];
 
-            if ($current > $max) {
+            if ($current > $this->max) {
                 break;
             }
         }
