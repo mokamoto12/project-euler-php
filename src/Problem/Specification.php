@@ -1,6 +1,6 @@
 <?php
 
-namespace Mokamoto12\ProjectEuler\Problem\Specification;
+namespace Mokamoto12\ProjectEuler\Problem;
 
 /**
  * Interface Specification

@@ -2,7 +2,7 @@
 
 namespace Mokamoto12\ProjectEuler\Problem\Specification\Composite;
 
-use Mokamoto12\ProjectEuler\Problem\Specification\Specification;
+use Mokamoto12\ProjectEuler\Problem\Specification;
 
 /**
  * Class AndSpecification

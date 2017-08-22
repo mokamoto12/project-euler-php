@@ -1,8 +1,8 @@
 <?php
 
-namespace Mokamoto12\ProjectEuler\Problem\Sequence;
+namespace Mokamoto12\ProjectEuler\Problem;
 
-use Mokamoto12\ProjectEuler\Problem\Specification\Specification;
+use Mokamoto12\ProjectEuler\Problem\Specification;
 
 /**
  * Interface Sequence

@@ -2,9 +2,6 @@
 
 namespace Mokamoto12\ProjectEuler\Problem;
 
-use Mokamoto12\ProjectEuler\Problem\Sequence\Sequence;
-use Mokamoto12\ProjectEuler\Problem\Specification\Specification;
-
 /**
  * Class Problem001
  * @package Mokamoto12\ProjectEuler\Problem

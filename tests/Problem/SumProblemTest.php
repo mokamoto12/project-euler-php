@@ -3,9 +3,7 @@
 namespace Mokamoto12\ProjectEuler\Problem;
 
 use Mokamoto12\ProjectEuler\Problem\Sequence\NaturalSequence;
-use Mokamoto12\ProjectEuler\Problem\Sequence\Sequence;
 use Mokamoto12\ProjectEuler\Problem\Specification\MultipleSpecification;
-use Mokamoto12\ProjectEuler\Problem\Specification\Specification;
 use PHPUnit\Framework\TestCase;
 
 /**

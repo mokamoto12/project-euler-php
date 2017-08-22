@@ -2,7 +2,8 @@
 
 namespace Mokamoto12\ProjectEuler\Problem\Sequence;
 
-use Mokamoto12\ProjectEuler\Problem\Specification\Specification;
+use Mokamoto12\ProjectEuler\Problem\Sequence;
+use Mokamoto12\ProjectEuler\Problem\Specification;
 
 /**
  * Class FibonacciSequence

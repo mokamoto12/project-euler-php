@@ -2,6 +2,7 @@
 
 namespace Mokamoto12\ProjectEuler\Problem\Sequence;
 
+use Mokamoto12\ProjectEuler\Problem\Sequence;
 use Mokamoto12\ProjectEuler\Problem\Specification\MultipleSpecification;
 use PHPUnit\Framework\TestCase;
 
