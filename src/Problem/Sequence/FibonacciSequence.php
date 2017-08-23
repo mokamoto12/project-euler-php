@@ -29,26 +29,16 @@ class FibonacciSequence implements Sequence
     /**
      * @param Specification $specification
      *
-     * @return \Generator
+     * @return \Iterator
      */
-    public function filteredBy(Specification $specification): \Generator
-    {
-        foreach ($this->generator() as $num) {
-            if ($specification->isSatisfiedBy($num)) {
-                yield $num;
-            }
-        }
-    }
-
-    /**
-     * @return \Generator
-     */
-    private function generator(): \Generator
+    public function filteredBy(Specification $specification): \Iterator
     {
         $current = 1;
         $carry = 2;
         while (true) {
-            yield $current;
+            if ($specification->isSatisfiedBy($current)) {
+                yield $current;
+            }
 
             list($current, $carry) = [$carry, $current + $carry];
 

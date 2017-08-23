@@ -29,9 +29,9 @@ class NaturalSequence implements Sequence
     /**
      * @param Specification $specification
      *
-     * @return \Generator
+     * @return \Iterator
      */
-    public function filteredBy(Specification $specification): \Generator
+    public function filteredBy(Specification $specification): \Iterator
     {
         foreach ($this->sequence as $num) {
             if ($specification->isSatisfiedBy($num)) {
