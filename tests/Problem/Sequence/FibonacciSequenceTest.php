@@ -31,6 +31,8 @@ class FibonacciSequenceTest extends TestCase
 
     public function testFilteredBy()
     {
-        $this->assertEquals([1, 2, 3, 5, 8, 13, 21], $this->sequence->filteredBy($this->specification));
+        $actual = $this->sequence->filteredBy($this->specification);
+        $this->assertInstanceOf(\Generator::class, $actual);
+        $this->assertEquals([1, 2, 3, 5, 8, 13, 21], iterator_to_array($actual));
     }
 }

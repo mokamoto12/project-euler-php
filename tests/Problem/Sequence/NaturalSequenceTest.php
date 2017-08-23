@@ -24,6 +24,8 @@ class NaturalSequenceTest extends TestCase
 
     public function testFilteredBy()
     {
-        $this->assertEquals([3, 6, 9], $this->sequence->filteredBy(new MultipleSpecification(3)));
+        $actual = $this->sequence->filteredBy(new MultipleSpecification(3));
+        $this->assertInstanceOf(\Generator::class, $actual);
+        $this->assertEquals([3, 6, 9], iterator_to_array($actual));
     }
 }

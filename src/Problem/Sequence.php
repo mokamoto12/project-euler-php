@@ -13,7 +13,7 @@ interface Sequence
     /**
      * @param Specification $specification
      *
-     * @return array
+     * @return \Generator
      */
-    public function filteredBy(Specification $specification): array;
+    public function filteredBy(Specification $specification): \Generator;
 }

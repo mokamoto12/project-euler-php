@@ -35,6 +35,6 @@ class SumProblem implements Problem
      */
     public function resolve()
     {
-        return (int)array_sum($this->sequence->filteredBy($this->specification));
+        return (int)array_sum(iterator_to_array($this->sequence->filteredBy($this->specification)));
     }
 }

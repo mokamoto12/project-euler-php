@@ -29,17 +29,15 @@ class FibonacciSequence implements Sequence
     /**
      * @param Specification $specification
      *
-     * @return array
+     * @return \Generator
      */
-    public function filteredBy(Specification $specification): array
+    public function filteredBy(Specification $specification): \Generator
     {
-        $ret = [];
         foreach ($this->generator() as $num) {
             if ($specification->isSatisfiedBy($num)) {
-                $ret[] = $num;
+                yield $num;
             }
         }
-        return $ret;
     }
 
     /**

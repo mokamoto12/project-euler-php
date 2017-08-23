@@ -29,12 +29,14 @@ class NaturalSequence implements Sequence
     /**
      * @param Specification $specification
      *
-     * @return int[]
+     * @return \Generator
      */
-    public function filteredBy(Specification $specification): array
+    public function filteredBy(Specification $specification): \Generator
     {
-        return array_values(array_filter($this->sequence, function (int $num) use ($specification) {
-            return $specification->isSatisfiedBy($num);
-        }));
+        foreach ($this->sequence as $num) {
+            if ($specification->isSatisfiedBy($num)) {
+                yield $num;
+            }
+        }
     }
 }
