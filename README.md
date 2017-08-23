@@ -221,3 +221,49 @@ $sequence = new NaturalSequence(1000);
 ```
 
 というようにします。
+
+### 実行する
+
+ここまででProblem1の
+
+「1000未満の自然数の数列の中から3か5の倍数になっている数を抽出し、その数の総和を求める」
+
+の数列と仕様と問題を実装することができました。
+
+次はこれらの実装を組み合わせて問題を解いてみましょう。
+
+問題を解いて解答を出力するアプリケーションを実装します。
+
+* アプリケーション
+
+```
+class Application
+{
+    private $problem;
+
+    public function __construct(Problem $problem)
+    {
+        $this->problem = $problem;
+    }
+
+    public function run()
+    {
+        echo $this->problem->resolve() . "\n";
+    }
+}
+```
+
+実行するには以下のようにします。
+
+```
+<?php
+
+$sequence = new NaturalSequence(1000);
+$specification = (new MultipleSpecification(3))->or(new MultipleSpecification(5));
+$problem1 = new SumProblem($sequence, $specification);
+
+$app = new Application($problem1);
+$app->run();
+```
+
+これでProblem1が解けました！
